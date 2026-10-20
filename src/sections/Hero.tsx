@@ -128,7 +128,7 @@ export default function Hero() {
                 <RoboStage scene="rover" className="rb-rover" tip="above" />
 
                 <nav className="hero-nav" aria-label="Main">
-                    <a className="hero-logo" href="#"><img src={mbLogo} alt="MB Logo" /><sup>®</sup></a>
+                    <a className="hero-logo" href="#"><img src={mbLogo} alt="MB Logo" /></a>
                     <div className="hero-links">
                         {LINKS.map(([l, n]) => (
                             <a key={l} className="hero-link" href="#">{l} {n && <small>({n})</small>}</a>
@@ -146,7 +146,7 @@ export default function Hero() {
 
                 <div className="hero-proj" aria-label="About and social links">
                     <div className="proj-inner">
-                        <p>{ABOUT}</p>
+                        <p className="-py-5">{ABOUT}</p>
                         <div className="proj-socials">
                             {SOCIALS.map((s) => (
                                 <a key={s.name} className="soc" href={s.href} aria-label={s.name}>{s.icon}</a>
@@ -316,10 +316,10 @@ html,body{margin:0;padding:0;background:#c04a0f}
 
   .hero-ghost{left:0;right:0;text-align:center;top:13cqh;font-size:calc(var(--m)*28);color:rgba(255,255,255,.16)}
   .hero-portrait{--pw:calc(var(--m)*100);left:calc(50% - var(--pw)/2);width:var(--pw);height:70cqh;bottom:0}
-  .hero-name{left:0;right:0;text-align:center;bottom:18cqh;font-size:calc(var(--m)*29)}
+  .hero-name{left:0;right:0;text-align:center;bottom:22cqh;font-size:calc(var(--m)*29)}
 
-  .hero-proj{--cu:calc(var(--m)*1.9);left:0;right:0;margin:0 auto;top:auto;bottom:3.5cqh;width:calc(var(--m)*84);max-width:none;text-shadow:0 1px 10px rgba(0,0,0,.35)}
-  .proj-inner{align-items:center;text-align:center}
+  .hero-proj{--cu:calc(var(--m)*1.9);left:0;right:0;margin:0 auto;top:auto;bottom:1.5cqh;width:calc(var(--m)*84);max-width:none;text-shadow:0 1px 10px rgba(0,0,0,.35)}
+  .proj-inner{align-items:center;text-align:center;padding:calc(var(--m)*4) 0}
   .proj-inner p{max-width:100%;font-size:max(12px,calc(var(--m)*3.5))}
   .proj-socials{justify-content:center}
 }

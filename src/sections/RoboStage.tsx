@@ -697,6 +697,7 @@ function buildSaw(): Bot {
 
   const STORY: V3 = [1.1, 1.6, 0.6];
   let clock = 0;
+  const SPEED = 0.75;
 
   const solve = (x: number, y: number, z: number) => {
     yaw.rotation.y = Math.atan2(-z, x);
@@ -712,9 +713,9 @@ function buildSaw(): Bot {
   const bot: Bot = {
     id: "saw", group, k: 0, poke: 0,
     hb: { c: [0.65, 0.9, 0], s: [1.35, 1.0, 0.8] },
-    update(dt) {
+    update(_t, dt) {
       const ke = ease(bot.k);
-      clock += dt * (1 - ke);                       // work pauses while it tells its story
+      clock += dt * (1 - ke) * SPEED;                     // work pauses while it tells its story
       const u = clock % SAW_T;
       const p = sawPath(u);
       const bounce = bot.poke > 0 ? Math.sin((1 - bot.poke) * Math.PI) * 0.3 : 0;
